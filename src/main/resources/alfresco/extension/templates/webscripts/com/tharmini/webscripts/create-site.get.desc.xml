@@ -1,0 +1,6 @@
+<webscript>
+	<shortname>Site Creation Script</shortname>
+	<description>Utility to create site.</description>
+	<url>/demo/modules/create-site</url>
+	<transaction>required</transaction>
+</webscript>

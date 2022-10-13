@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>Hello World Demo</shortname>
+	<description>Responds back with greeting</description>
+	<url>/com/webscript/platformsample/MyDemoHello</url>
+	<format defualt="html"></format>
+	<authentication>user</authentication>
+</webscript>

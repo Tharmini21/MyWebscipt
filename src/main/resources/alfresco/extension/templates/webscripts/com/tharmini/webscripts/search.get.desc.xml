@@ -1,0 +1,12 @@
+<webscript>
+    <shortname>Search</shortname>
+    <description>
+    Counts Objects of given type
+	Parameter name : {type}
+	Example : cm:content, cm:folder, st:site, custom:contentType etc.
+	Returns sites totalDocument,totalfolder that matches search keyword
+    </description>
+    <url>/com/webscript/platformsample/Search?path={path}&amp;site={siteShortName}&amp;type={type}&amp;skipCount={skipCount}&amp;maxCount={maxCount}</url>
+    <authentication>user</authentication>
+    <format default="json"></format>
+ </webscript>

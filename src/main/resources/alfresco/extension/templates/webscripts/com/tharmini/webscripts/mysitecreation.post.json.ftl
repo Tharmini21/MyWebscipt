@@ -1,7 +1,9 @@
 {
-shortName:"test-site",
-sitePreset:"site-dashboard",
-title:"Test Site",
-description:"Test Site description",
-visibility:"PUBLIC"
+         "shortName" : "testSite",
+         "sitePreset" : "site-dashboard",
+         "title" : "TestSiteCreation",
+         "description": "Demo Test",
+	   "visibility": "PUBLIC"
 }
+
+ 

@@ -1,0 +1,19 @@
+<webscript>
+    <shortname>Create Site</shortname>
+    <description>Create an site by uploading JSON data
+      
+        POST body should include JSON such as:
+        {
+         "shortName" : "testSite",
+         "sitePreset" : "site-dashboard",
+         "title" : "TestSiteCreation",
+	     "description": "Demo Test",
+	     "visibility": "PUBLIC"
+        }
+    </description>
+    <url>/com/tharmini/webscripts/createSite</url>
+    <format default="html">any</format>
+    <authentication>user</authentication>
+    <transaction>required</transaction>
+    <family>Alfresco Tutorials</family>
+</webscript>

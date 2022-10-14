@@ -40,11 +40,11 @@ public class SiteCreation extends AbstractWebScript {
         String shortName = "", visibility="", sitePreset="", title="", description = "";
        
         try {
-            shortName= (String) reqData.get("shortName");
-            sitePreset= (String) reqData.get("sitePreset");
-            title= (String) reqData.get("title");
-            description= (String) reqData.get("description");
-            visibility= (String) reqData.get("visibility");
+            shortName= (String) req.getParameter("shortName");
+            sitePreset= (String) req.getParameter("sitePreset");
+            title= (String) req.getParameter("title");
+            description= (String) req.getParameter("description");
+            visibility= (String) req.getParameter("visibility");
         	/*shortName= "test-site";
             sitePreset= "site-dashboard";
             title= "Test Site";

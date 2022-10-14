@@ -1,10 +1,16 @@
 <webscript>
     <shortname>Create Sites</shortname>
-    <description>Site Creation</description>
-    <url>/com/webscript/platformsample/SiteCreation?shortName={shortName?}&amp;sitePreset={sitePreset?}&amp;title={title?}&amp;description={description?}&amp;visibility={visibility?}</url>
-    <url>/com/webscript/platformsample/SiteCreation.json</url>
-    <url>/com/webscript/platformsample/SiteCreation.html</url>
-    <format default="json"></format>
-   <authentication>user</authentication>
+    <description>Site Creation
+    {
+         "shortName" : "testSite",
+         "sitePreset" : "site-dashboard",
+         "title" : "TestSiteCreation",
+	     "description": "Demo Test",
+	     "visibility": "PUBLIC"
+    }
+    </description>
+    <url>/com/webscript/platformsample/SiteCreation</url>
+    <format default="html">any</format>
+    <authentication>user</authentication>
   <transaction>required</transaction>
  </webscript>

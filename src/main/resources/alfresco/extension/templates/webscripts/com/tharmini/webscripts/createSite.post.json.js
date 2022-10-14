@@ -3,20 +3,22 @@ var siteCreationLog = [];
 function main() {
 	model.success = false;
 
-	// Default preset is "site-dashboard"
-	// Use this url to create site: 
-	// e.g.: http://<hos>:<port>/share/page/demo/modules/create-site?sitePreset=whitepapers-site-dashboard&shortName=whitetest&title=WhiteTest
 	
-	var shortName = args.shortName;
-	var sitePreset = args.sitePreset != null ? args.sitePreset : "site-dashboard";
+	var shortName = json.get("shortName");
+    var sitePreset = json.get("sitePreset");
+    var title = json.get("title");
+    var description = json.get("description");
+    var visibility = json.get("visibility");
+
+	var sitePreset = sitePreset != null ? sitePreset : "site-dashboard";
 
 	if (shortName != null) {
 		shortName = shortName.replace(/[^0-9a-zA-Z\-\s]/g, "");
 		shortName = shortName.trim();
 		shortName = shortName.replace(/\s+/g, "-").toLowerCase();
-		var title = args.title != null ? args.title : shortName;
+		/*var title = args.title != null ? args.title : shortName;
 		var visibility = args.visibility != null ? args.visibility : "PUBLIC";
-		var description = args.description != null ? args.description : "";
+		var description = args.description != null ? args.description : "";*/
 
 		var jsonPayload = '{"title":"' + title + '","visibility":"' + visibility + '","description":"' + description + '","sitePreset":"'
 				+ sitePreset + '","shortName":"' + shortName + '"}';
@@ -47,7 +49,7 @@ function main() {
 					model.siteCreationLog = siteCreationLog;
 				} else {
 					conn.del("/api/sites/" + encodeURIComponent(jsonRespFrmRepo.shortName));
-				//	status.setCode(status.STATUS_INTERNAL_SERVER_ERROR, "error.create");
+					//status.setCode(status.STATUS_INTERNAL_SERVER_ERROR, "error.create");
 				}
 			} else if (jsonRespFrmRepo.status.code) {
 				//status.setCode(jsonRespFrmRepo.status.code, jsonRespFrmRepo.message);

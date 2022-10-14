@@ -40,5 +40,6 @@
      <property name="siteService" ref="SiteService" />
     </bean>
    
-	
+	<bean id="webscript.com.tharmini.webscripts.createSite.post" class="com.webscript.platformsample.SiteCreation" parent="webscript">
+    </bean>
 	</beans>

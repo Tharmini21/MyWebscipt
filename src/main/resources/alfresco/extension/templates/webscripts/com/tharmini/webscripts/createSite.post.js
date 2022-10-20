@@ -1,14 +1,20 @@
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 var siteCreationLog = [];
 
 function main() {
-	model.success = false;
-
 	
-	var shortName = json.get("shortName");
-    var sitePreset = json.get("sitePreset");
-    var title = json.get("title");
-    var description = json.get("description");
-    var visibility = json.get("visibility");
+	model.success = false;
+	
+	var shortName = args.shortName;
+    var sitePreset = args.sitePreset;
+    var title = args.title;
+    var description = args.description;
+    var visibility = args.visibility;
+	// var shortName = json.get("shortName");
+    // var sitePreset = json.get("sitePreset");
+    // var title = json.get("title");
+    // var description = json.get("description");
+    // var visibility = json.get("visibility");
 
 	var sitePreset = sitePreset != null ? sitePreset : "site-dashboard";
 
@@ -28,7 +34,7 @@ function main() {
 
 		var remoteConnection = remote.connect("alfresco");
 		var repoResponse = remoteConnection.post("/api/sites", clientRequest, "application/json");
-
+		
 		if (repoResponse.status == 400) {
 			siteCreationLog.push("Site already exists!");
 			model.siteCreationLog = siteCreationLog;

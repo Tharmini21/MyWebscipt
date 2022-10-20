@@ -8,7 +8,7 @@
     <name>my-webscript Platform/Repository JAR Module</name>
     <description>Platform/Repo JAR Module (to be included in the alfresco.war)</description>
     <packaging>jar</packaging>
-
+   
     <properties>
         <!-- Alfresco Maven Plugin version to use -->
         <alfresco.sdk.version>4.4.0</alfresco.sdk.version>
@@ -53,6 +53,7 @@
     <!-- Libs used in Unit and Integration tests -->
     <!-- IMPORTANT - Test dependencies need to be here in the top parent POM as
                      the Alfresco Maven IT Mojo runs as part of the parent project ... -->
+                     
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -86,6 +87,14 @@
             <version>${alfresco.sdk.version}</version>
             <scope>test</scope>
         </dependency>
+
+       <dependency>
+	<groupId>org.activiti</groupId>
+	<artifactId>activiti-engine</artifactId>
+	<version>7-201802-EA</version>
+</dependency>
+<!-- Thanks for using https://jar-download.com -->
+       
 
     </dependencies>
 
@@ -546,4 +555,5 @@
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
+    
 </project>

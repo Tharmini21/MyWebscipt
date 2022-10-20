@@ -10,7 +10,7 @@
     }
     </description>
     <url>/com/webscript/platformsample/SiteCreation</url>
-    <format default="html">any</format>
+    <format default="json">extension</format>
     <authentication>user</authentication>
-  <transaction>required</transaction>
+    <transaction>required</transaction>
  </webscript>

@@ -11,9 +11,7 @@
 	     "visibility": "PUBLIC"
         }
     </description>
-    <url>/com/tharmini/webscripts/createSite</url>
-    <format default="html">any</format>
+    <url>/createSite</url>
     <authentication>user</authentication>
-    <transaction>required</transaction>
     <family>Alfresco Tutorials</family>
 </webscript>

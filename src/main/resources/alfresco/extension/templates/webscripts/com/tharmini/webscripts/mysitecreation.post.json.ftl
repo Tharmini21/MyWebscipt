@@ -1,9 +1,9 @@
-{
-         "shortName" : "testSite",
-         "sitePreset" : "site-dashboard",
-         "title" : "TestSiteCreation",
-         "description": "Demo Test",
-	   "visibility": "PUBLIC"
+{"SiteCreation" : 
+             {
+         	 "shortName" : "${shortName}",
+         	 "sitePreset" : "${sitePreset}",
+         	 "title" : "${title}",
+         	 "description": "${description}",
+	   	 "visibility": "${visibility}"
+		 }
 }
-
- 

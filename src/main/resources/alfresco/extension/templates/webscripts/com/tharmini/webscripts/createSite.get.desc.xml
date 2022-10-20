@@ -1,0 +1,7 @@
+<webscript>
+    <shortname>Create Sites</shortname>
+    <description>Site Creation</description>
+    <url>/createSite?shortName={shortName}&amp;sitePreset={sitePreset}&amp;title={title}&amp;description={description}&amp;visibility={visibility}</url>
+ 	<authentication>user</authentication>
+ </webscript>
+ 

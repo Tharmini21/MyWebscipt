@@ -1,0 +1,8 @@
+<webscript>
+  <shortname>Delete Site</shortname>
+  <description>Delete site specified site name</description>
+  <url>/deletesite?sitename={sitename}</url>
+  <format default="html">extension</format>
+  <authentication>admin</authentication>
+  <transaction>required</transaction>
+</webscript>

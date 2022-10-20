@@ -22,7 +22,7 @@
 
     <!-- A simple class that is initialized by Spring -->
     <bean id="com.webscript.Demo" class="com.webscript.platformsample.Demo" init-method="init" />
-
+ 
     <!-- A simple module component that will be executed once.
          Note. this module component will only be executed once, and then there will be an entry for it in the Repo DB.
          So doing for example $ mvn clean install alfresco:run twice will only execute this component the first time.
@@ -37,6 +37,8 @@
         <property name="nodeLocatorService" ref="nodeLocatorService" />
         <property name="serviceRegistry" ref="ServiceRegistry" />
     </bean>
-
+ <bean id="webscript.com.tharmini.webscripts.mysitecreation.post" class="com.webscript.platformsample.SiteCreation" parent="webscript">
+     <property name="siteService" ref="SiteService" />
+    </bean>
 
 </beans>

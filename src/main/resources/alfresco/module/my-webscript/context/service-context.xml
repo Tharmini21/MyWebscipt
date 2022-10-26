@@ -37,8 +37,34 @@
         <property name="nodeLocatorService" ref="nodeLocatorService" />
         <property name="serviceRegistry" ref="ServiceRegistry" />
     </bean>
- <bean id="webscript.com.tharmini.webscripts.mysitecreation.post" class="com.webscript.platformsample.SiteCreation" parent="webscript">
-     <property name="siteService" ref="SiteService" />
+ 
+ <bean id="siteBean" class="com.webscript.beans.SiteBean">
+        <property name="siteService">
+            <ref bean="SiteService" />
+        </property>
     </bean>
 
+    <bean id="webscript.com.tharmini.webscripts.mysitecreation.post" class="com.webscript.scripts.CreateSite" parent="webscript">
+    	<property name="siteBean">
+    		<ref bean="siteBean" />    	
+        </property>
+        <property name="siteService">
+            <ref bean="SiteService" />
+        </property>
+    </bean>    
+
+ <bean id="deleteBean" class="com.webscript.beans.DeleteBean">
+        <property name="siteService">
+            <ref bean="SiteService" />
+        </property>
+    </bean>
+
+    <bean id="webscript.com.tharmini.webscripts.deletesite.delete" class="com.webscript.scripts.DeleteSite" parent="webscript">
+    	<property name="deleteBean">
+    		<ref bean="deleteBean" />    	
+        </property>
+        <property name="siteService">
+            <ref bean="SiteService" />
+        </property>
+    </bean>   
 </beans>

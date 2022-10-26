@@ -1,5 +1,8 @@
 package com.webscript.platformsample;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 
 import org.alfresco.model.ContentModel;
@@ -15,8 +18,11 @@ import org.alfresco.util.ParameterCheck;
 //import org.apache.chemistry.opencmis.commons.impl.json.parser.JSONParser;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.simple.parser.JSONParser;
+//import org.json.simple.parser.JSONParser;
 //import org.json.simple.JSONObject;
 import org.springframework.extensions.webscripts.AbstractWebScript;
 import org.springframework.extensions.webscripts.WebScriptRequest;
@@ -26,7 +32,7 @@ import org.springframework.extensions.webscripts.Status;
 
 import java.util.HashMap;
 import java.util.Map;
-public class SiteCreation extends DeclarativeWebScript {
+public class SiteCreation extends AbstractWebScript {
 
     private static Log LOGGER = LogFactory.getLog(SiteCreation.class);
     //private SiteInfo siteInfo;
@@ -43,8 +49,27 @@ public class SiteCreation extends DeclarativeWebScript {
     }
     
     @Override
-   // public void execute(WebScriptRequest req, WebScriptResponse res) throws IOException {
-    protected Map<String, Object> executeImpl(WebScriptRequest req,Status status) {
+    public void execute(WebScriptRequest req, WebScriptResponse res) throws IOException {
+    //protected Map<String, Object> executeImpl(WebScriptRequest req,Status status) {
+    	/*try {
+    	File file = new File("sample.json");
+        JSONParser parser = new JSONParser();
+        JSONObject data = (JSONObject) parser.parse(new FileReader(file.getAbsolutePath()));//path to the JSON file.
+        System.out.println(data.toString());
+    	}catch(JSONException err)
+    	{
+    		err.printStackTrace();
+    	}*/
+    	JSONParser jsonParser = new JSONParser();
+    	try {
+    	Object objnew = jsonParser.parse(new FileReader("C:/Users/Tharmini/projects/eclipse-workspace/my-webscript/src/main/resources/alfresco/extension/templates/webscripts/com/tharmini/webscripts/sample.json"));
+    	JSONObject jsonObject = (JSONObject)objnew;
+        String name = (String)jsonObject.get("shortName");
+        String title = (String)jsonObject.get("title");
+        LOGGER.info("CreateSite reqData: "+jsonObject);
+    	 } catch(Exception e) {
+             e.printStackTrace();
+          }
     	JSONObject reqData = (JSONObject) req.parseContent();
     	 //JSONObject json = (JSONObject) new JSONParser().parse(req);
          //System.out.println(json);
@@ -83,15 +108,16 @@ public class SiteCreation extends DeclarativeWebScript {
         err.printStackTrace();
        } 
         System.out.println("Site with "+ shortName +"is needed to be created");
-        return model;
+        //return model;
   }
     private SiteInfo createSiteNew(String sitePreset, String shortName, String title, String description,String visibility)
     {
       // Create a public site
       SiteVisibility siteVisibility = SiteVisibility.valueOf(visibility);
-      SiteInfo siteInfo = this.siteService.createSite(sitePreset, shortName, title, description, siteVisibility);
+      return this.siteService.createSite(sitePreset, shortName, title, description, siteVisibility);
+      /*SiteInfo siteInfo = this.siteService.createSite(sitePreset, shortName, title, description, siteVisibility);
       this.siteService.createContainer(shortName, "TestComponent", ContentModel.TYPE_FOLDER, null);
-      return siteInfo;
+      return siteInfo;*/
     }
    public void createSite(String sitePreset, String shortName, String title, String description,String visibility) {
    System.out.println("data--- " + this.siteService.getSite(shortName));

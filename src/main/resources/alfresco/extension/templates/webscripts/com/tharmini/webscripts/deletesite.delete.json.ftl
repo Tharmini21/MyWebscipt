@@ -1,0 +1,5 @@
+{"deletesite" : 
+        {
+         "shortName" : "${shortName}"
+        }
+}

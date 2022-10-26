@@ -8,7 +8,7 @@
     <name>my-webscript Platform/Repository JAR Module</name>
     <description>Platform/Repo JAR Module (to be included in the alfresco.war)</description>
     <packaging>jar</packaging>
-   
+  
     <properties>
         <!-- Alfresco Maven Plugin version to use -->
         <alfresco.sdk.version>4.4.0</alfresco.sdk.version>

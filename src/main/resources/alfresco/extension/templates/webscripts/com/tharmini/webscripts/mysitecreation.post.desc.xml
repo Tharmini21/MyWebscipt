@@ -8,9 +8,11 @@
 	     "description": "Demo Test",
 	     "visibility": "PUBLIC"
     }
-    </description>
-    <url>/com/webscript/platformsample/SiteCreation</url>
-    <format default="json">extension</format>
-    <authentication>user</authentication>
-    <transaction>required</transaction>
+    </description>  
+  <url>/mysitecreation</url>
+  <url>/mysitecreation.json</url>
+  <url>/mysitecreation.html</url>
+  <format default="json">extension</format>
+  <authentication runas="admin">guest</authentication>
+  <transaction>required</transaction>
  </webscript>

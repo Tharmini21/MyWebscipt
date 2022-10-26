@@ -1,4 +1,3 @@
-import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 var siteCreationLog = [];
 
 function main() {
@@ -28,10 +27,11 @@ function main() {
 
 		var jsonPayload = '{"title":"' + title + '","visibility":"' + visibility + '","description":"' + description + '","sitePreset":"'
 				+ sitePreset + '","shortName":"' + shortName + '"}';
-		
+		console.log(jsonPayload);
 		var clientRequest = jsonPayload.toString();
 		var clientJSON = JSON.parse(clientRequest);
-
+		console.log(clientRequest);
+		console.log(clientJSON);
 		var remoteConnection = remote.connect("alfresco");
 		var repoResponse = remoteConnection.post("/api/sites", clientRequest, "application/json");
 		

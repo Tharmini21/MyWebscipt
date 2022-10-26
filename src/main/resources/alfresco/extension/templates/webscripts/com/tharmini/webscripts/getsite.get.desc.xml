@@ -1,0 +1,9 @@
+<webscript>
+    <shortname>GetSite</shortname>
+    <description>Get site using site name</description>
+    <url>/com/webscript/platformsample/Getsitedetails?shortName={shortName}</url>
+    <format default="json">argument</format>
+  <authentication>user</authentication>
+  <transaction allow="readonly">required</transaction>
+  <lifecycle>limited_support</lifecycle>
+ </webscript>

@@ -37,9 +37,15 @@
           <ref bean="ServiceRegistry" />
       </property>
     </bean>
-    <bean id="webscript.com.tharmini.webscripts.mysitecreation.post" class="com.webscript.platformsample.SiteCreation" parent="webscript">
-     <property name="siteService" ref="SiteService" />
-    </bean>
    
+   <bean id="webscript.com.tharmini.webscripts.getsite.get"
+		class="com.webscript.platformsample.Getsitedetails" 
+		parent="webscript">
+		 <property name="serviceRegistry">
+          <ref bean="ServiceRegistry" />
+      </property>
+      
+	</bean>
+	
 	
 	</beans>
